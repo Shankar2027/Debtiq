@@ -1,0 +1,179 @@
+/* ═══════════════════════════════════════════════════════
+   DebtIQ™ — Premium High-Contrast Cyberpunk Token System
+   Space Grotesk (UI Elements) + JetBrains Mono (Data/Code)
+   Optimized Mobile Auto-Screen Adjustments & Breakpoints
+═══════════════════════════════════════════════════════ */
+
+:root {
+  /* ── Ultra-Dark Deep Space Void Surfaces ── */
+  --bg-void:    #030712; 
+  --bg-deep:    #090d16;
+  --bg-base:    #0f172a;
+  --bg-surface: #111827;
+  --bg-card:    #0b1329; 
+  --bg-raised:  #1e293b;
+  --bg-hover:   rgba(30, 41, 59, 0.45);
+  --bg-input:   #030712;
+
+  /* ── High Definition Structural Grid Outlines ── */
+  --line-0:  #1e293b;
+  --line-1:  rgba(255, 255, 255, 0.06);
+  --line-2:  #334155;
+  --line-3:  #475569;
+
+  /* ── Ultra-Vivid Pure Monochromatic Neon Telemetry ── */
+  --cyan:    #00e5ff;
+  --cyan-d:  #0077cc;
+  --teal:    #00ffcc;
+  --green:   #39ff14; 
+  --amber:   #ffb800; 
+  --orange:  #f97316;
+  --red:     #ff3860; 
+  --purple:  #aa55ff;
+  --blue:    #3388ff;
+
+  /* ── Micro-Contrast Semantic Mappings ── */
+  --c-critical:   #ff3860;
+  --c-major:      #f97316;
+  --c-minor:      #ffb800;
+  --c-healthy:    #39ff14;
+
+  --bg-critical:  rgba(255, 56, 96, 0.08);
+  --bg-major:     rgba(249, 115, 22, 0.08);
+  --bg-minor:     rgba(255, 184, 0, 0.08);
+  --bg-healthy:   rgba(57, 255, 20, 0.08);
+
+  --border-critical: rgba(255, 56, 96, 0.35);
+  --border-major:    rgba(249, 115, 22, 0.35);
+  --border-minor:    rgba(255, 184, 0, 0.35);
+  --border-healthy:  rgba(57, 255, 20, 0.35);
+
+  --shadow-glow-critical: 0 0 20px rgba(255, 56, 96, 0.45);
+  --shadow-glow-major:    0 0 20px rgba(249, 115, 22, 0.45);
+  --shadow-glow-minor:    0 0 20px rgba(255, 184, 0, 0.45);
+  --shadow-glow-healthy:  0 0 20px rgba(57, 255, 20, 0.45);
+
+  /* ── Typography Definition ── */
+  --txt-0: #ffffff; 
+  --txt-1: #f1f5f9; 
+  --txt-2: #94a3b8; 
+  --txt-3: #64748b; 
+
+  --font-ui:   'Space Grotesk', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ── Base Layer Anti-Blur & Mobile Boundary Protection ── */
+*, *::before, *::after { 
+  box-sizing: border-box; 
+  margin: 0; 
+  padding: 0; 
+}
+
+html { 
+  scroll-behavior: smooth; 
+  overflow-x: hidden;
+  width: 100%;
+}
+
+body {
+  background: var(--bg-void);
+  color: var(--txt-1);
+  font-family: var(--font-ui);
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+  
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-smooth: always;
+}
+
+/* Digital Grid Matrix Overlay */
+body::before {
+  content: '';
+  position: fixed; inset: 0; pointer-events: none; z-index: 0;
+  background-image:
+    linear-gradient(rgba(0, 229, 255, 0.012) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 229, 255, 0.012) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* High-Definition Ambient Radar Glow */
+body::after {
+  content: '';
+  position: fixed; top: 0; left: 0;
+  width: 100vw; height: 100vh; pointer-events: none; z-index: 0;
+  background: radial-gradient(circle at 0% 0%, rgba(0, 119, 204, 0.06) 0%, transparent 50%);
+}
+
+#root { 
+  position: relative; 
+  z-index: 1; 
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Scrollbar Definition */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-void); }
+::-webkit-scrollbar-thumb { background: #334155; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--cyan); }
+
+/* ── RESPONSIVE MOBILE OVERRIDES (Issues 11 & 12 Fixes) ── */
+
+/* Text overflow insurance classes */
+pre, code {
+  white-space: pre-wrap !important;
+  word-break: break-all !important;
+}
+
+/* Responsive utilities for complex flexboxes */
+@media (max-width: 1024px) {
+  body::after {
+    display: none; /* Lighten paint cycles on tablets and mobile screens */
+  }
+  
+  /* Prevent charts and layouts from rupturing horizontal boundaries */
+  .recharts-responsive-container {
+    min-width: 0 !important;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Scale down spacing parameters cleanly */
+  ::-webkit-scrollbar { width: 4px; height: 4px; }
+  
+  /* Enforce structural layout stack wrapping arrays */
+  div[style*="display: flex"], 
+  div[style*="display:flex"] {
+    max-width: 100%;
+  }
+}
+
+/* Keyframe Core Animations */
+@keyframes flicker {
+  0%, 100% { opacity: 1; } 91% { opacity: 1; } 92% { opacity: 0.65; } 93% { opacity: 1; } 96% { opacity: 0.8; } 97% { opacity: 1; }
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes pulseRing {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50%     { opacity: 0.2; transform: scale(1.05); }
+}
+@keyframes scanline {
+  0%   { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+
+/* Mobile sliding hardware-accelerated drawer keyframes */
+@keyframes slideInRight {
+  from { transform: translateX(100%); opacity: 0; }
+  to   { transform: translateX(0); opacity: 1; }
+}
